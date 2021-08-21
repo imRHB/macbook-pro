@@ -9,7 +9,6 @@ document.getElementById('btn-memory-default').addEventListener('click', function
 document.getElementById('btn-memory-double').addEventListener('click', function () {
     const extraMemoryCostText = document.getElementById('extra-memory-cost');
     extraMemoryCostText.innerText = 180;
-
     const totalCostText = document.getElementById('total-cost');
     const total = updatePrice();
     totalCostText.innerText = total;
@@ -49,6 +48,8 @@ document.getElementById('btn-delivery-express').addEventListener('click', functi
     const total = updatePrice();
     totalCostText.innerText = total;
 });
+
+
 
 function updatePrice() {
     const bestPriceText = document.getElementById('best-cost');
