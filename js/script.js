@@ -1,13 +1,33 @@
 /* 
+    Define variables as globally
+*/
+
+const defaultSizeMemoryCost = 0;
+const doubleSizeMemoryCost = 180;
+const defaultSizeStorageCost = 0;
+const doubleSizeStorageCost = 100;
+const completeStorageCost = 180;
+const freeDeliveryCost = 0;
+const expressDeliveryCost = 20;
+
+/* 
+    Function to get the memory, storage and delivery option
+*/
+
+function getChoice(choice, choiceId) {
+    const additionalChoice = document.getElementById(choiceId);
+    additionalChoice.innerText = choice;
+    const totalCostText = document.getElementById('total-cost');
+    const totalCost = updatePrice();
+    totalCostText.innerText = totalCost;
+};
+
+/* 
     Button handler for 8GB Unified Memory
 */
 
 document.getElementById('btn-memory-default').addEventListener('click', function () {
-    const extraMemoryCostText = document.getElementById('extra-memory-cost');
-    extraMemoryCostText.innerText = 0;
-    const totalCostText = document.getElementById('total-cost');
-    const totalCost = updatePrice();
-    totalCostText.innerText = totalCost;
+    getChoice(defaultSizeMemoryCost, 'extra-memory-cost');
 });
 
 /*
@@ -15,11 +35,7 @@ document.getElementById('btn-memory-default').addEventListener('click', function
 */
 
 document.getElementById('btn-memory-double').addEventListener('click', function () {
-    const extraMemoryCostText = document.getElementById('extra-memory-cost');
-    extraMemoryCostText.innerText = 180;
-    const totalCostText = document.getElementById('total-cost');
-    const totalCost = updatePrice();
-    totalCostText.innerText = totalCost;
+    getChoice(doubleSizeMemoryCost, 'extra-memory-cost');
 });
 
 /*
@@ -27,11 +43,7 @@ document.getElementById('btn-memory-double').addEventListener('click', function 
 */
 
 document.getElementById('btn-storage-default').addEventListener('click', function () {
-    const extraStorageCostText = document.getElementById('extra-storage-cost');
-    extraStorageCostText.innerText = 0;
-    const totalCostText = document.getElementById('total-cost');
-    const totalCost = updatePrice();
-    totalCostText.innerText = totalCost;
+    getChoice(defaultSizeStorageCost, 'extra-storage-cost');
 });
 
 /*
@@ -39,11 +51,7 @@ document.getElementById('btn-storage-default').addEventListener('click', functio
 */
 
 document.getElementById('btn-storage-double').addEventListener('click', function () {
-    const extraStorageCostText = document.getElementById('extra-storage-cost');
-    extraStorageCostText.innerText = 100;
-    const totalCostText = document.getElementById('total-cost');
-    const totalCost = updatePrice();
-    totalCostText.innerText = totalCost;
+    getChoice(doubleSizeStorageCost, 'extra-storage-cost');
 });
 
 /*
@@ -51,11 +59,7 @@ document.getElementById('btn-storage-double').addEventListener('click', function
 */
 
 document.getElementById('btn-storage-complete').addEventListener('click', function () {
-    const extraStorageCostText = document.getElementById('extra-storage-cost');
-    extraStorageCostText.innerText = 180;
-    const totalCostText = document.getElementById('total-cost');
-    const totalCost = updatePrice();
-    totalCostText.innerText = totalCost;
+    getChoice(completeStorageCost, 'extra-storage-cost');
 });
 
 /*
@@ -63,11 +67,7 @@ document.getElementById('btn-storage-complete').addEventListener('click', functi
 */
 
 document.getElementById('btn-delivery-free').addEventListener('click', function () {
-    const deliveryChargeText = document.getElementById('delivery-cost');
-    deliveryChargeText.innerText = 0;
-    const totalCostText = document.getElementById('total-cost');
-    const totalCost = updatePrice();
-    totalCostText.innerText = totalCost;
+    getChoice(freeDeliveryCost, 'delivery-cost');
 });
 
 /*
@@ -75,11 +75,7 @@ document.getElementById('btn-delivery-free').addEventListener('click', function 
 */
 
 document.getElementById('btn-delivery-express').addEventListener('click', function () {
-    const deliveryChargeText = document.getElementById('delivery-cost');
-    deliveryChargeText.innerText = 20;
-    const totalCostText = document.getElementById('total-cost');
-    const totalCost = updatePrice();
-    totalCostText.innerText = totalCost;
+    getChoice(expressDeliveryCost, 'delivery-cost');
 });
 
 /*
@@ -104,7 +100,7 @@ function updatePrice() {
 };
 
 /*
-    Button handler for promo code and total calculation after applied promo code and minor error handling
+    Button handler for promo code, promo code validation and final calculation
 */
 
 document.getElementById('btn-promo-apply').addEventListener('click', function () {
@@ -112,15 +108,26 @@ document.getElementById('btn-promo-apply').addEventListener('click', function ()
     const priceTotal = document.getElementById('price-total');
     const promoCodeField = document.getElementById('input-field-promo');
     const promoCode = promoCodeField.value;
+    const validPromo = document.getElementById('valid-promo');
+    const invalidPromo = document.getElementById('invalid-promo');
+    const emptyPromo = document.getElementById('empty-promo');
     if (promoCode.toLowerCase() == 'stevekaku') {
         totalPrice = totalPrice - ((totalPrice * 20) / 100);
         priceTotal.innerText = totalPrice;
+        validPromo.style.display = 'block';
+        invalidPromo.style.display = 'none';
+        emptyPromo.style.display = 'none';
     }
     else if (promoCode == '') {
-        alert('No promo code entered');
+        validPromo.style.display = 'none';
+        invalidPromo.style.display = 'none';
+        emptyPromo.style.display = 'block';
     }
     else {
-        alert('Invalid promo code entered, please enter correct promo code!');
+        const invalidPromo = document.getElementById('invalid-promo');
+        validPromo.style.display = 'none';
+        invalidPromo.style.display = 'block';
+        emptyPromo.style.display = 'none';
     }
     promoCodeField.value = '';
 });

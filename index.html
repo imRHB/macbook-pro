@@ -10,6 +10,8 @@
     <!-- Bootstrap stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -33,33 +35,32 @@
                             <h5 class="fw-bold">Memory</h5>
                             <div>
                                 <button id="btn-memory-default" class="btn btn-outline-dark">8GB
-                                    unified memory</button>
+                                    Unified Memory</button>
                                 <button id="btn-memory-double" class="btn btn-outline-dark">16GB
-                                    unified memory</button>
+                                    Unified Memory</button>
                             </div>
                         </div>
                         <div class="mb-4">
                             <h5 class="fw-bold">Storage</h5>
                             <div>
-                                <button id="btn-storage-default" class="btn btn-outline-dark">256GB SSD storage</button>
-                                <button id="btn-storage-double" class="btn btn-outline-dark">512GB SSD storage</button>
-                                <button id="btn-storage-complete" class="btn btn-outline-dark">1TB SSD storage</button>
+                                <button id="btn-storage-default" class="btn btn-outline-dark">256GB SSD Storage</button>
+                                <button id="btn-storage-double" class="btn btn-outline-dark">512GB SSD Storage</button>
+                                <button id="btn-storage-complete" class="btn btn-outline-dark">1TB SSD Storage</button>
                             </div>
                         </div>
                         <div class="mb-5">
                             <h5 class="fw-bold">Choose Your Delivery Option</h5>
                             <div>
                                 <button id="btn-delivery-free" class="btn btn-outline-dark">Friday, Aug 27 FREE
-                                    Prime
                                     Delivery</button>
-                                <button id="btn-delivery-express" class="btn btn-outline-dark">Saturday, Aug 22 Delivery
-                                    Charge $20</button>
+                                <button id="btn-delivery-express" class="btn btn-outline-dark">Sunday, Aug 22 Express
+                                    Delivery Charge $20</button>
                             </div>
                         </div>
                     </div>
                     <!-- Product price -->
                     <div class="mb-5">
-                        <table class="table" style="width: 350px;">
+                        <table class="table" style="width: 400px;">
                             <tbody>
                                 <tr class="fs-5">
                                     <th>Best Price</th>
@@ -86,14 +87,18 @@
                     </div>
                     <!-- Promo code -->
                     <div>
-                        <div class="shadow p-4 rounded-3" style="width: 400px;">
+                        <div class="shadow p-4 rounded-3" style="width: 400px; height: 180px;">
                             <p id="promo-code" class="fw-bold fs-5 text-primary">Add Promo Code
                             </p>
                             <div class="input-group mb-3" style="width: 350px;">
                                 <input id="input-field-promo" type="text" class="form-control"
                                     placeholder="Enter promo code">
                                 <button id="btn-promo-apply" class="btn btn-warning" type="button" id="">Apply</button>
+                                <br>
                             </div>
+                            <p id="valid-promo" class="fw-bold text-secondary">You got 20% discount!</p>
+                            <p id="invalid-promo" class="fw-bold text-danger">Invalid promo code!</p>
+                            <p id="empty-promo" class="fw-bold text-warning">Enter promo code!</p>
                         </div>
                     </div>
                 </div>
