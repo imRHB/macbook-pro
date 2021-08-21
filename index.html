@@ -16,11 +16,11 @@
     <main>
         <section class="container my-5">
             <div class="row">
-                <div class="col-6">
+                <div class="col-lg-6">
                     <img class="w-75" src="images/mac.png" alt="Mac Book Pro">
                 </div>
                 <!-- Product description -->
-                <div class="col-6">
+                <div class="col-lg-6">
                     <div class="mb-5">
                         <h1>Customize Your Blue 24-inch iMac with Apple M1 Chip</h1>
                         <p class="fs-5">Apple M1 chip with 8-core CPU with 4 performance cores and 4 efficiency cores,
@@ -32,24 +32,28 @@
                         <div class="mb-4">
                             <h5 class="fw-bold">Memory</h5>
                             <div>
-                                <button id="btn-mem-default" class="btn btn-outline-dark">8GB unified memory</button>
-                                <button id="btn-mem-double" class="btn btn-outline-dark">16GB unified memory</button>
+                                <button id="btn-memory-default" class="btn btn-outline-dark">8GB
+                                    unified memory</button>
+                                <button id="btn-memory-double" class="btn btn-outline-dark">16GB
+                                    unified memory</button>
                             </div>
                         </div>
                         <div class="mb-4">
                             <h5 class="fw-bold">Storage</h5>
                             <div>
-                                <button id="btn-stor-default" class="btn btn-outline-dark">256GB SSD storage</button>
-                                <button id="btn-stor-double" class="btn btn-outline-dark">512GB SSD storage</button>
-                                <button id="btn-stor-complete" class="btn btn-outline-dark">1TB SSD storage</button>
+                                <button id="btn-storage-default" class="btn btn-outline-dark">256GB SSD storage</button>
+                                <button id="btn-storage-double" class="btn btn-outline-dark">512GB SSD storage</button>
+                                <button id="btn-storage-complete" class="btn btn-outline-dark"
+                                    onclick="priceUpdate()">1TB SSD storage</button>
                             </div>
                         </div>
                         <div class="mb-5">
                             <h5 class="fw-bold">Choose Your Delivery Option</h5>
                             <div>
-                                <button id="btn-del-free" class="btn btn-outline-dark">Friday, Aug 27 FREE Prime
+                                <button id="btn-delivery-free" class="btn btn-outline-dark">Friday, Aug 27 FREE
+                                    Prime
                                     Delivery</button>
-                                <button id="btn-del-exp" class="btn btn-outline-dark">Saturday, Aug 22 Delivery
+                                <button id="btn-delivery-express" class="btn btn-outline-dark">Saturday, Aug 22 Delivery
                                     Charge $20</button>
                             </div>
                         </div>
@@ -60,23 +64,23 @@
                             <tbody>
                                 <tr class="fs-5">
                                     <th>Best Price</th>
-                                    <td class="fw-bold">$<span id="price-basic">1299</span></td>
+                                    <td class="fw-bold">$<span id="best-cost">1299</span></td>
                                 </tr>
                                 <tr class="fs-5">
                                     <th>Extra Memory Cost</th>
-                                    <td class="fw-bold">$<span id="price-extra-mem">0</span></td>
+                                    <td class="fw-bold">$<span id="extra-memory-cost">0</span></td>
                                 </tr>
                                 <tr class="fs-5">
                                     <th>Extra Storage Cost</th>
-                                    <td class="fw-bold">$<span id="price-extra-stor">0</span></td>
+                                    <td class="fw-bold">$<span id="extra-storage-cost">0</span></td>
                                 </tr>
                                 <tr class="fs-5">
                                     <th>Delivery Charge</th>
-                                    <td class="fw-bold">$<span id="price-del-exp">0</span></td>
+                                    <td class="fw-bold">$<span id="delivery-cost">0</span></td>
                                 </tr>
                                 <tr class="fs-4">
                                     <th>Total Price</th>
-                                    <td class="fw-bold">$<span id="price-total">1299</span></td>
+                                    <td class="fw-bold">$<span id="total-cost">1299</span></td>
                                 </tr>
                             </tbody>
                         </table>
